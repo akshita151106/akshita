@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body { @apply bg-[#07070f] font-sans text-slate-100 antialiased; margin: 0; }
+
+.glass {
+  @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.06), 0 8px 40px rgba(124, 58, 237, 0.14);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: gridmove 14s linear infinite;
+}
+@keyframes gridmove { to { background-position: 48px 48px; } }
+
+.thumb-text { animation: thumb 1.8s ease-out forwards; }
+@keyframes thumb {
+  0%   { opacity: 0; transform: scale(0.4); }
+  15%  { opacity: 1; transform: scale(1.15); }
+  30%  { transform: scale(1); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: scale(1.05) translateY(-24px); }
+}
+
+.screen-glow {
+  animation: sglow 1.6s ease-out forwards;
+  box-shadow: inset 0 0 120px 30px rgba(34, 211, 238, 0.55);
+}
+@keyframes sglow { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; } }
+
+.pop { animation: pop 0.25s ease-out; }
+@keyframes pop { from { transform: scale(0.85); opacity: 0.4; } to { transform: scale(1); opacity: 1; } }
+
+/* Fullscreen: fill the screen and letterbox the video */
+.cam:fullscreen { aspect-ratio: auto !important; width: 100vw; height: 100vh; border-radius: 0; background: #000; }
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-bg, .thumb-text, .screen-glow, .pop { animation: none; }
+}
