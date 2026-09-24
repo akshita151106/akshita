@@ -51,13 +51,6 @@ npm run dev
 
 Open **http://localhost:5173**, click **START CAMERA**, and allow camera access.
 
-## 🌐 Deploy it
-
-The project is a standard Vite app, so any static host works (Vercel, Netlify, GitHub Pages):
-
-- Build command: `npm run build`
-- Output directory: `dist`
-
 Camera access requires **HTTPS**. These hosts provide it automatically. Plain `http://` only works on `localhost`.
 
 ## 🗂️ Project structure
@@ -82,12 +75,6 @@ Camera access requires **HTTPS**. These hosts provide it automatically. Plain `h
 - **Models won't load?** The first run needs internet access. Try a private window if an extension or network is blocking the downloads.
 - **Low FPS?** Turn off the trackers you don't need with the toggles, or lower the requested resolution in `App.tsx`.
 
-## 🔭 Ideas for what's next
-
-- Control slides or music with gestures
-- Air-draw with your index finger
-- Recognise custom gestures
-- Track motion and body pose
 
 ## 🙏 Credits
 
